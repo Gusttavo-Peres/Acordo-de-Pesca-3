@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notícia - Acordo de</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", sans-serif; }
+    body { background: #f4f4f4; color: #333; }
+
+    header {
+      background-color: #008000;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #000000;
+      padding: 10px 30px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      background-color: #000000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .article-img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .veja-tambem {
+      margin-top: 30px;
+    }
+
+    .veja-tambem h3 {
+      font-size: 18px;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .veja-tambem ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .veja-tambem li {
+      margin-bottom: 10px;
+    }
+
+    .veja-tambem a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .veja-tambem a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  
+    .stories-verticais {
+      background-color: #e6ffe6;
+      padding: 30px;
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .stories-verticais h2 {
+      font-size: 22px;
+      color: #006400;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .story-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .story-vertical {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .story-vertical img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #008000;
+      object-fit: cover;
+    }
+    .story-vertical h4 {
+      margin: 0 0 5px 0;
+      color: #008000;
+      font-size: 16px;
+    }
+    .story-vertical p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+
+    .stories-verticais {
+      background-color: #e6ffe6;
+      padding: 30px;
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .stories-verticais h2 {
+      font-size: 22px;
+      color: #006400;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .story-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .story-vertical {
+      width: 200px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .story-vertical img {
+      width: 100%;
+      height: 120px;
+      border-radius: 6px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .story-vertical h4 {
+      margin: 0 0 5px 0;
+      color: #008000;
+      font-size: 16px;
+      text-align: center;
+    }
+    .story-vertical p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+      text-align: center;
+    }
+
+
+    .stories-verticais {
+      background-color: #e6ffe6;
+      padding: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .stories-verticais h2 {
+      font-size: 22px;
+      color: #006400;
+      margin-bottom: 20px;
+    }
+
+    .stories-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .story-column {
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .story-column h3 {
+      color: #008000;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .story-vertical {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .story-vertical img {
+      width: 100%;
+      height: 120px;
+      border-radius: 6px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .story-vertical h4 {
+      margin: 0 0 5px 0;
+      color: #008000;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .story-vertical p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+      text-align: center;
+    }
+
+</style>
+</head>
+<body>
+
+  <header>
+</section>
+    <h1>Acordo de Pesca</h1>
+    <span>🌐 Portal de Notícias Acordo de Pesca</span>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">---</a></li>
+      <li><a href="#">---</a></li>
+      <li><a href="#">---</a></li>
+      <li><a href="#">---</a></li>
+      <li><a href="#">---</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="#">Início</a> > <a href="#">___</a> >____
+    </div>
+
+    <h2>__________________________________________________________</h2>
+    <div class="meta">Publicado em 24 de junho de 2025 | Por SEMAS</div>
+
+    <img src="https://placehold.co/900x400/ccffcc/000?text=imagem" alt="Imagem da notícia" class="article-img" />
+
+    <p>
+      ______________________________________________________________________________________________________________________.
+    </p>
+
+    <p>
+      ______________________________________________________________________________________________________________________.
+    </p>
+
+    <p>
+      ________________________________________________________________________________________________________________________.
+    </p>
+
+    <div class="veja-tambem">
+      <h3>Veja também:</h3>
+      <ul>
+        <li><a href="#">📌 link 1</a></li>
+        <li><a href="#">📌 link 2</a></li>
+        <li><a href="#">📌 link 3</a></li>
+        <li><a href="#">📌 link 4</a></li>
+      </ul>
+    </div>
+  </div>
+    </div>
+  </div>
+</section>
+  <footer>
+    © 2025 Acordo de Pesca — Exemplo.
+  </footer>
+
+</body>
+</html>
